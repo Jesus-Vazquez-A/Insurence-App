@@ -7,7 +7,6 @@ Created on Fri Jun 17 14:22:52 2022
 
 import pandas as pd
 import streamlit as st
-import numpy as np
 import joblib
 from PIL import Image
 
@@ -112,8 +111,7 @@ def main():
 
     new_data=preprocess(new_data) 
     
-    st.subheader("Data preprocessing")
-    st.table(new_data)
+  
 
     
     # Realizamos las predicciones
@@ -124,6 +122,12 @@ def main():
         
     
         st.write(" Predicted : $ {} USD ".format(pred))
+        
+     new_data["predictions"]=pred.flatten()
+    
+    st.subheader("Predictions")
+    
+    st.table(new_data
 
 if __name__ == "__main__":
     
