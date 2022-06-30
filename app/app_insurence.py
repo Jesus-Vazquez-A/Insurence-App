@@ -123,11 +123,7 @@ def main():
     
         st.write(" Predicted : $ {} USD ".format(pred))
         
-     new_data["predictions"]=pred
-    
-    st.subheader("Predictions")
-    
-    st.table(new_data
+     
 
 if __name__ == "__main__":
     
