@@ -123,7 +123,7 @@ def main():
     
         st.write(" Predicted : $ {} USD ".format(pred))
         
-     new_data["predictions"]=pred.flatten()
+     new_data["predictions"]=pred
     
     st.subheader("Predictions")
     
