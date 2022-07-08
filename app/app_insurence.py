@@ -122,8 +122,7 @@ def main():
         
         pred=predict(new_data)
         
-        st.subheader("Predictions")
-        new_data["Predictions"]=pred
+        
     
         st.write(" Predicted : $ {} USD ".format(pred))
         
