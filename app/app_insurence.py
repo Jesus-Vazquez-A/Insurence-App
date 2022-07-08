@@ -64,11 +64,11 @@ def input_data():
     
     smoker=st.select_slider("Smoker",("No","Yes")),
     
-    medical_problem=st.select_slider("Smoker",("Light","Severe")),
+    medical_problem=st.select_slider("Medical Problem",("Light","Severe")),
     
     region=st.radio("Region",('Southeast', 'Northeast', 'Southwest', 'Northwest'))
   
-    return age,sex,bmi,children,smoker,region
+    return age,sex,bmi,children,smoker,medical_problem,region
 
 
 def create_dataframe():
