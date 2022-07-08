@@ -115,7 +115,8 @@ def main():
     
 
     new_data=preprocess(new_data) 
-    
+    st.subheader("Data Preprocesing")
+    st.table(new_data)
   
 
     
