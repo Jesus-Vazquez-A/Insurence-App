@@ -6,6 +6,7 @@ Created on Fri Jun 17 14:22:52 2022
 """
 
 import pandas as pd
+import numpy as np
 import streamlit as st
 import joblib
 from PIL import Image
@@ -113,6 +114,7 @@ def main():
     st.table(new_data)
     
     new_data=preprocess(new_data)
+    new_data=np.asarray(new_data)
 
  
 
