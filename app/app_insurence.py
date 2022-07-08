@@ -72,7 +72,7 @@ def input_data():
     return age,sex,bmi,children,smoker,medical_problem,region
 
 
-def create_dataframe():
+def dataframe():
     
     age,sex,bmi,children,smoker,medical_problem,region=input_data()
     
@@ -87,12 +87,14 @@ def create_dataframe():
     return new_data
 
 
-def preprocess(new_data):
+def preprocess():
     
+    new_data=dataframe()
     ohe_preproccesing=Preprocessing_OHE(new_data)
 
     new_data=ohe_preproccesing.binary()
     new_data=ohe_preproccesing.multinomial()
+    new_data=np.asarray(new_data)
     
     return new_data
 
@@ -108,18 +110,10 @@ def main():
     
    
     
-    new_data=create_dataframe() 
-
-    st.subheader("User Input")
-    st.table(new_data)
-    
     new_data=preprocess(new_data)
-    new_data=np.asarray(new_data)
-
+  
  
 
-    
-    # Realizamos las predicciones
     if st.button(label='Predicted'):
         
         pred=predict(new_data)
