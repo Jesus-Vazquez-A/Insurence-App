@@ -31,6 +31,7 @@ class Preprocessing_OHE():
         
         self.new_data["Sex"]=self.new_data["Sex"].apply(lambda x: 1 if x == "Male"  else 0)
         self.new_data["Smoker"]=self.new_data["Smoker"].apply(lambda x: 1 if x == "Yes"  else 0)
+        self.new_data["Medical Problem"]=self.X_data["Medical Problem"].apply(lambda x: 1 if x == "Severe"  else 0)
         
         return self.new_data
     
@@ -63,6 +64,8 @@ def input_data():
     
     smoker=st.select_slider("Smoker",("No","Yes")),
     
+    medical_problem=st.select_slider("Smoker",("Light","Severe")),
+    
     region=st.radio("Region",('Southeast', 'Northeast', 'Southwest', 'Northwest'))
   
     return age,sex,bmi,children,smoker,region
@@ -74,7 +77,9 @@ def create_dataframe():
     
     features_dict={"Age":age,"Sex":sex,
                    "BMI":bmi,"Children":children,
-                   "Smoker":smoker,"Region":region}
+                   "Smoker":smoker,
+                   "Medical Problem":medical_problem,
+                   "Region":region}
     
     new_data=pd.DataFrame(features_dict)
     
@@ -93,7 +98,7 @@ def preprocess(new_data):
 
 def predict(new_data):
     
-    model=joblib.load("xgb_insurence.pkl") 
+    model=joblib.load("xgb_insurencev2.pkl") 
     
     return model.predict(new_data)
     
