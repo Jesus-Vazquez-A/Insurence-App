@@ -114,10 +114,7 @@ def main():
     
     
 
-    new_data=preprocess(new_data) 
-    st.subheader("Data Preprocesing")
-    st.table(new_data)
-  
+ 
 
     
     # Realizamos las predicciones
@@ -125,7 +122,8 @@ def main():
         
         pred=predict(new_data)
         
-        
+        st.subheader("Predictions")
+        new_data["Predictions"]=pred
     
         st.write(" Predicted : $ {} USD ".format(pred))
         
