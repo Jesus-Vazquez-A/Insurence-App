@@ -112,7 +112,7 @@ def main():
     st.subheader("User Input")
     st.table(new_data)
     
-    
+    new_data=preprocess(new_data)
 
  
 
