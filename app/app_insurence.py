@@ -98,7 +98,7 @@ def preprocess(new_data):
 
 def predict(new_data):
     
-    model=joblib.load("xgb_insurencev2.pkl") 
+    model=joblib.load("xgb_insurence.v2.pkl") 
     
     return model.predict(new_data)
     
