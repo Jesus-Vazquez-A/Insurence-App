@@ -73,7 +73,7 @@ def input_data():
 
 def create_dataframe():
     
-    age,sex,bmi,children,smoker,region=input_data()
+    age,sex,bmi,children,smoker,medical_problem,region=input_data()
     
     features_dict={"Age":age,"Sex":sex,
                    "BMI":bmi,"Children":children,
