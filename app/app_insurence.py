@@ -31,7 +31,7 @@ class Preprocessing_OHE():
         
         self.new_data["Sex"]=self.new_data["Sex"].apply(lambda x: 1 if x == "Male"  else 0)
         self.new_data["Smoker"]=self.new_data["Smoker"].apply(lambda x: 1 if x == "Yes"  else 0)
-        self.new_data["Medical Problem"]=self.X_data["Medical Problem"].apply(lambda x: 1 if x == "Severe"  else 0)
+        self.new_data["Medical Problem"]=self.new_data["Medical Problem"].apply(lambda x: 1 if x == "Severe"  else 0)
         
         return self.new_data
     
