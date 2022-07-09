@@ -110,7 +110,7 @@ def main():
     
    
     
-    new_data=preprocess(new_data)
+    new_data=preprocess()
   
  
 
