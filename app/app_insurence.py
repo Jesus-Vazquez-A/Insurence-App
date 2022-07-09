@@ -6,7 +6,6 @@ Created on Fri Jun 17 14:22:52 2022
 """
 
 import pandas as pd
-import numpy as np
 import streamlit as st
 import joblib
 from PIL import Image
@@ -87,14 +86,14 @@ def dataframe():
     return new_data
 
 
-def preprocess():
+def preprocess(new_data):
     
-    new_data=dataframe()
+    
     ohe_preproccesing=Preprocessing_OHE(new_data)
 
     new_data=ohe_preproccesing.binary()
     new_data=ohe_preproccesing.multinomial()
-    new_data=np.asarray(new_data)
+   
     
     return new_data
 
@@ -103,24 +102,31 @@ def predict(new_data):
     
     model=joblib.load("xgb_insurence.v2.pkl") 
     
-    return model.predict(new_data)
+    return model.predict(new_data).flatten()
     
 
 def main():
     
    
-    
-    new_data=preprocess()
+   
+    new_data=dataframe()
+    st.subheader("User Input")
+    st.table(new_data)
   
- 
+    
+     
+    new_data_preprocess=preprocess(new_data)
 
     if st.button(label='Predicted'):
         
-        pred=predict(new_data)
-        
+        pred=predict(new_data_preprocess)
+        new_data["Predicted"]=pred
         
     
         st.write(" Predicted : $ {} USD ".format(pred))
+        
+        st.subheader("Data Prediction")
+        st.table(new_data)
         
      
 
