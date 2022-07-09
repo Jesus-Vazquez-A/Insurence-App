@@ -102,7 +102,7 @@ def predict(new_data):
     
     model=joblib.load("xgb_insurence.v2.pkl") 
     
-    return model.predict(new_data).flatten()
+    return model.predict(new_data)
     
 
 def main():
@@ -115,19 +115,17 @@ def main():
   
     
      
-    new_data_preprocess=preprocess(new_data)
+    new_data=preprocess(new_data)
 
     if st.button(label='Predicted'):
         
-        pred=predict(new_data_preprocess)
+        pred=predict(new_data)
         new_data["Predicted"]=pred
         
     
         st.write(" Predicted : $ {} USD ".format(pred))
         
-        st.subheader("Data Prediction")
-        st.table(new_data)
-        
+      
      
 
 if __name__ == "__main__":
