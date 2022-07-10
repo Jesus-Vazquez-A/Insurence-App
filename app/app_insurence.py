@@ -10,7 +10,7 @@ import streamlit as st
 import joblib
 from PIL import Image
 
-st.write(""" #### Author Amado de Jesus Vazquez Acuña """)
+
 st.write(""" # Predicted Insurence Price """)
 
 
