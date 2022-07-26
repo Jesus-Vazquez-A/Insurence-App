@@ -10,12 +10,12 @@ import streamlit as st
 from xgboost import XGBRegressor
 
 
-st.write(""" #### Author Amado de Jesus Vazquez Acuña """)
+st.write(""" ### Author Amado de Jesus Vazquez Acuña """)
 st.write(""" # Predicted Insurence Price """)
 
 
 
-st.image("""insurence_img.jpg""")
+st.image("""bg-insurance.jpg""")
 
 
 
