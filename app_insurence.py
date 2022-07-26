@@ -53,15 +53,15 @@ def input_data():
     
     age=st.slider(label="Age",min_value=18,max_value=64,step=1),
     
-    sex=st.select_slider("Sex",("Male","Female")),
+    sex=st.select_box("Sex",("Male","Female")),
     
-    bmi=st.slider(label="BMI",min_value=18.0,max_value=47.0,step=0.0001),
+    bmi=st.number_input(label="BMI",min_value=18.0,max_value=47.0,step=0.1),
     
-    children=st.slider(label="Children",min_value=0,max_value=5,step=1),
+    children=st.number_imput(label="Children",min_value=0,max_value=5,step=1),
     
     smoker=st.select_slider("Smoker",("No","Yes")),
     
-    medical_problem=st.select_slider("Medical Problem",("Light","Severe")),
+    medical_problem=st.select_box("Medical Problem",("Light","Severe")),
     
     region=st.radio("Region",('Southeast', 'Northeast', 'Southwest', 'Northwest'))
   
@@ -122,11 +122,12 @@ def main():
     # Realizamos las predicciones
     if st.button(label='Predicted'):
         
-        pred=predict(new_data)
+        charges=predict(new_data)
+        st.success(f'The estimated health insurance charge is: $ {charges} USD')
         
         
     
-        st.write(" Predicted : $ {} USD ".format(pred))
+        
 
 if __name__ == "__main__":
     
