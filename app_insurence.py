@@ -8,17 +8,17 @@ Created on Fri Jun 17 14:22:52 2022
 import pandas as pd
 import streamlit as st
 from xgboost import XGBRegressor
-from PIL import Image
+
 
 st.write(""" #### Author Amado de Jesus Vazquez Acuña """)
 st.write(""" # Predicted Insurence Price """)
 
 
 
+st.image()
 
-image = Image.open("C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Seguro\\Proyect-Insurence-Steps\\insurence_img.jpg")
 
-st.image(image)
+@st.cache
 
 
 class Preprocessing_OHE():
@@ -100,7 +100,7 @@ def preprocess(new_data):
 def predict(new_data):
     
     model=XGBRegressor()
-    model.load_model("C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Seguro\\Proyect-Insurence-Steps\\src\\xgb_insurence.json")
+    model.load_model("xgb_insurence.json")
     
     return model.predict(new_data)
     
@@ -109,7 +109,9 @@ def main():
    
     
     new_data=create_dataframe() 
-
+    
+    st.subheader("User Input")
+    st.table(new_data)
  
     
 
