@@ -53,7 +53,7 @@ def input_data():
     
     age=st.slider(label="Age",min_value=18,max_value=64,step=1),
     
-    sex=st.select_box(label="Sex",("Male","Female")),
+    sex=st.selectbox(label="Sex",("Male","Female")),
     
     bmi=st.number_input(label="BMI",min_value=18.0,max_value=47.0,step=0.1),
     
@@ -61,7 +61,7 @@ def input_data():
     
     smoker=st.select_slider(label="Smoker",("No","Yes")),
     
-    medical_problem=st.select_box(label="Medical Problem",("Light","Severe")),
+    medical_problem=st.selectbox(label="Medical Problem",("Light","Severe")),
     
     region=st.radio(label="Region",('Southeast', 'Northeast', 'Southwest', 'Northwest'))
   
