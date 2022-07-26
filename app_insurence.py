@@ -61,7 +61,7 @@ def input_data():
     
     smoker=st.selectbox("Smoker",("No","Yes")),
     
-    medical_problem=st.select_slider("Medical Problem",("Light","Severe")),
+    medical_problem=st.selectbox("Medical Problem",("Light","Severe")),
     
     region=st.radio("Region",('Southeast', 'Northeast', 'Southwest', 'Northwest'))
     
