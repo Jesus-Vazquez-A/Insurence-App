@@ -55,7 +55,7 @@ def input_data():
     
     sex=st.select_slider("Sex",("Male","Female")),
     
-    bmi=st.slider(label="BMI",min_value=18.0,max_value=47.0,step=0.0001),
+    bmi=st.number_input(label="BMI",min_value=18.0,max_value=47.0,step=0.0001),
     
     children=st.slider(label="Children",min_value=0,max_value=5,step=1),
     
