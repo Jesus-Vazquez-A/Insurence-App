@@ -18,7 +18,6 @@ st.write(""" # Predicted Insurence Price """)
 st.image("""insurence_img.jpg""")
 
 
-@st.cache
 
 
 class Preprocessing_OHE():
