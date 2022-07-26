@@ -15,7 +15,7 @@ st.write(""" # Predicted Insurence Price """)
 
 
 
-st.image()
+st.image("""insurence_img.jpg""")
 
 
 @st.cache
